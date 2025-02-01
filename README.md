@@ -11,14 +11,14 @@
 A minimalist CLI process manager for Linux, written in **C**.  
 [Ver em Português](##pt-br-fastproc-c)
 
-## Features
+### Features
 -  Real-time process monitoring via `/proc`
 -  Intuitive TUI with ncurses
 -  Kill processes with one key (`K`)
 -  RAM usage stats (total/used)
 -  Lightweight & fast by design
 
-## Installation
+### Installation
 ```bash
 git clone https://github.com/yourusername/fastproc.git
 cd fastproc
@@ -45,3 +45,4 @@ git clone https://github.com/yourusername/fastproc.git
 cd fastproc
 make
 sudo make install  # Opcional: instalação global
+```
