@@ -1,8 +1,8 @@
 
 # Fastproc-C 
-[english](#English)
+-[english version](#English)
 
-[portugues brasileiro](#pt-BR)
+-[versão pt-BR](#pt-BR)
 
 ## English
 
