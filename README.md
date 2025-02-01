@@ -4,7 +4,7 @@
 ![CLI Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ3bXZuZmduOWs1ZDZtZ2Q1eDQ2b2M2YTg4ZzZoMDg0MTExa3RqMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q8rSm7Dmob00KTgk0w/giphy.gif)
 
 A minimalist CLI process manager for Linux, written in **C**.  
-*PT-BR: [Ver em Português](#BR)*
+*PT-BR: [Ver em Português](#BR)
 
 ## Features
 -  Real-time process monitoring via `/proc`
