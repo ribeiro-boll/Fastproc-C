@@ -1,12 +1,13 @@
 
 # Fastproc-C 
+![CLI Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ3bXZuZmduOWs1ZDZtZ2Q1eDQ2b2M2YTg4ZzZoMDg0MTExa3RqMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q8rSm7Dmob00KTgk0w/giphy.gif)
+
+
 - *English version: [English version](#English)*
 
 - *Versão pt-BR: [Versão pt-BR](#pt-BR)*
 
 ## English
-
-![CLI Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ3bXZuZmduOWs1ZDZtZ2Q1eDQ2b2M2YTg4ZzZoMDg0MTExa3RqMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q8rSm7Dmob00KTgk0w/giphy.gif)
 
 A minimalist CLI process manager for Linux, written in **C**.  
 [Ver em Português](##pt-br-fastproc-c)
@@ -27,8 +28,6 @@ sudo make install  # Optional: system-wide install
 ```
 
 ## pt-BR
-
-![Demonstração CLI](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ3bXZuZmduOWs1ZDZtZ2Q1eDQ2b2M2YTg4ZzZoMDg0MTExa3RqMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q8rSm7Dmob00KTgk0w/giphy.gif)
 
 Um gerenciador de processos CLI minimalista para Linux, escrito em **C**.  
 
