@@ -15,7 +15,10 @@ A minimalist CLI process manager for Linux, written in **C**.
 ### Features
 -  Real-time process monitoring via `/proc`
 -  Intuitive TUI with ncurses
--  Kill processes with one key (`K`)     ⚠️(**NO CLOSING CONFIRMATION ASKED!**)⚠️
+-  Kill processes with one key (`K`)
+⚠️(**NO CLOSING CONFIRMATION ASKED!**)⚠️
+
+
 -  Global RAM usage stats (total/used)
 -  Lightweight & fast by design
 
