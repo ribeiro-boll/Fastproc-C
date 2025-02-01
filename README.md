@@ -16,7 +16,7 @@ A minimalist CLI process manager for Linux, written in **C**.
 -  Real-time process monitoring via `/proc`
 -  Intuitive TUI with ncurses
 -  Kill processes with one key (`K`)
--  RAM usage stats (total/used)
+-  Global RAM usage stats (total/used)
 -  Lightweight & fast by design
 
 ### Installation
@@ -24,7 +24,7 @@ A minimalist CLI process manager for Linux, written in **C**.
 git clone https://github.com/yourusername/fastproc.git
 cd fastproc
 make
-sudo make install  # Optional: system-wide install
+sudo make install
 ```
 
 ## pt-BR
@@ -35,7 +35,7 @@ Um gerenciador de processos CLI minimalista para Linux, escrito em **C**.
 - Monitoramento de processos em tempo real via `/proc`
 - Interface TUI intuitiva com ncurses
 - Encerre processos com uma tecla (`K`)
-- Estatísticas de uso de RAM (total/usada)
+- Estatísticas de uso da RAM Global (total/usada)
 - Leve e rápido por design
 
 ### Instalação
@@ -43,5 +43,5 @@ Um gerenciador de processos CLI minimalista para Linux, escrito em **C**.
 git clone https://github.com/yourusername/fastproc.git
 cd fastproc
 make
-sudo make install  # Opcional: instalação global
+sudo make install
 ```
