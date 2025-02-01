@@ -1,6 +1,6 @@
 
 # 🖥️ Fastproc-C 
-![CLI Demo](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmd1MzV6anRhNzZybnI3ODVpNjd3MXBiYzZobXJpOTNpbXplZTkydyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hRNQ1nta3OnV3VmUHV/giphy.gif)
+![CLI Demo](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb25pZTgycDgyb2hpam5scGVqZ3B6Zm8ycTFqZTZxcHRtczJraTBvYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v1UDa0DJg0uPx1qTYE/giphy.gif)
 
 
 - *English version: [English version](#English)*
