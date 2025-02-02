@@ -49,4 +49,4 @@ sudo make install
 ```
 ## Example photo from my daily driver
 
-![image]{https://imgur.com/a/TrRAhgt}
+![image](https://github.com/user-attachments/assets/dca74556-b711-4775-bf12-f83377af47d2)
