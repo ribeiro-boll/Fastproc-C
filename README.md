@@ -22,7 +22,7 @@ A minimalist CLI process manager for Linux, written in **C**.
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/fastproc.git
+git clone https://github.com/ribeiro-boll/fastproc.git
 cd fastproc
 make
 sudo make install
@@ -41,7 +41,7 @@ Um gerenciador de processos CLI minimalista para Linux, escrito em **C**.
 
 ### Instalação
 ```bash
-git clone https://github.com/yourusername/fastproc.git
+git clone https://github.com/ribeiro-boll/fastproc.git
 cd fastproc
 make
 sudo make install
