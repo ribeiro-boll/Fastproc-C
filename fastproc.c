@@ -15,7 +15,7 @@ typedef struct{
 
 long int convert_int(char* arr){
     long int retorno_nmr =0;
-    for (int i = 0;i<strlen(arr);i++){
+    for (int i = 0;i<(int)strlen(arr);i++){
         switch (arr[i]) {
         case '0': retorno_nmr*=10;break;
         case '1':case '2':case '3':
@@ -149,9 +149,9 @@ int main(){
     noecho();
     keypad(stdscr, TRUE);
     nodelay(stdscr, TRUE);
-    int max_linhas = LINES - 16;  // Linhas disponíveis para a lista
-    WINDOW *win_mem_total = newwin(7, COLS, 0, 0); // 3 linhas no topo
-    WINDOW *win = newwin(max_linhas, COLS, 5, 0); // Restante abaixo
+    int max_linhas = LINES - 16;
+    WINDOW *win_mem_total = newwin(7, COLS, 0, 0);
+    WINDOW *win = newwin(max_linhas, COLS, 5, 0);
     WINDOW *win_info = newwin(7, COLS, LINES - 14+4, 0);
     int selected = 0;
     int inicio = -2;
@@ -160,13 +160,11 @@ int main(){
     while (1) {
         flushinp();
         curs_set(0); 
-        // Atualiza a listagem de processos
         listar_processos("/proc");
         long processos_ativos = total_processos;
         if(processos_ativos > 0){
             sort(processos, total_processos);
         }
-        // Leitura de meminfo
         FILE *meminfo = fopen("/proc/meminfo", "r");
         if(meminfo) {
             while (fgets(linha_texto, sizeof(linha_texto), meminfo) != NULL){
@@ -182,7 +180,6 @@ int main(){
         double memoria_total_pc = mem1/(1024*1024);
         double memoria_usada_atual = ((mem1-mem2)/(1024*1024));
         
-        // Ajusta índices
         if (selected < inicio+2) {
             selected = inicio+2;
         }
@@ -190,7 +187,6 @@ int main(){
             selected = total_processos - 1;
         }
         int index_max = total_processos-1;
-        // Atualiza somente a subjanela 'win'
         werase(win);
         werase(win_mem_total);
         werase(win_info);
@@ -243,9 +239,8 @@ int main(){
             kill(codigo, SIGTERM);
         }
         else if (ch == 'q' || ch == 'Q') {
-            break;  // Sai do loop se 'q' for pressionado
+            break;
         }
-        // Libera os dados para a próxima iteração
         free(processos);
         processos = NULL;
         total_processos = 0;
