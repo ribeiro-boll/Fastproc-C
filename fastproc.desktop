@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Fastproc
+Comment=CLI Process Manager
+Exec=fastproc
+Icon=utilities-terminal
+Terminal=true
+Type=Application
+Categories=System;Monitor;
+Keywords=process;task;monitor;

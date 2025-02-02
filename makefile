@@ -1,33 +1,30 @@
-# Compilador
 CC = gcc
-
-# Flags de compilação
 CFLAGS = -Wall -Wextra
-
-# Bibliotecas para linking
 LIBS = -lncurses
-
-# Nome do executável
 TARGET = fastproc
+DESKTOP_FILE = fastproc.desktop
+DESKTOP_PATH = /usr/share/applications
 
-# Regra padrão (executada ao digitar apenas 'make')
 all: $(TARGET)
 
-# Compila o programa
 $(TARGET): fastproc.c
 	$(CC) $(CFLAGS) fastproc.c -o $(TARGET) $(LIBS)
 
-# Instala o programa globalmente (opcional)
 install:
 	cp $(TARGET) /usr/local/bin
 
-# Remove o executável e arquivos temporários
+install-desktop:
+	cp $(DESKTOP_FILE) $(DESKTOP_PATH)/
+	update-desktop-database
+
+install-all: install install-desktop
+
 clean:
 	rm -f $(TARGET)
 
-# Ajuda (exibe opções)
 help:
 	@echo "Uso:"
-	@echo "  make          : Compila o programa"
-	@echo "  sudo make install : Instala globalmente (opcional)"
-	@echo "  make clean    : Remove o executável"
+	@echo "  make           : Compila o programa"
+	@echo "  sudo make install : Instala globalmente"
+	@echo "  sudo make install-all : Instala o app + ícone no menu"
+	@echo "  make clean     : Remove o executável"
