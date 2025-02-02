@@ -47,3 +47,6 @@ cd fastproc-C
 make
 sudo make install
 ```
+## Example photo from my daily driver
+
+![image]{https://imgur.com/a/TrRAhgt}
