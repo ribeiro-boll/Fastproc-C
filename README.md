@@ -10,7 +10,6 @@
 ## English
 
 A minimalist CLI process manager for Linux, written in **C**.  
-[Ver em Português](##pt-br-fastproc-c)
 
 ### Features
 -  Real-time process monitoring via `/proc`
