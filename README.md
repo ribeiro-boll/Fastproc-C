@@ -1,4 +1,4 @@
-![license](https://img.shields.io/badge/License-MIT-green)  ![badge](https://img.shields.io/badge/Dev-C-blue)
+![license](https://img.shields.io/badge/License-MIT-green)  ![badge](https://img.shields.io/badge/Lang-C-blue)
 # 🖥️ *Fastproc-C* 
 ![CLI Demo](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb25pZTgycDgyb2hpam5scGVqZ3B6Zm8ycTFqZTZxcHRtczJraTBvYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v1UDa0DJg0uPx1qTYE/giphy.gif)
 
