@@ -9,7 +9,7 @@
 
 typedef struct{
     char pid[9];
-    char name[40];
+    char name[41];
     double memoria;
 } Processos_struct;
 
@@ -70,7 +70,7 @@ double total=0;
 void listar_processos(char*path){
     double memoria=0;
     char memoria_temporaria[1024];
-    char name_processo[40];
+    char name_processo[36];
     DIR *diretorio = opendir(path);
     if (diretorio == NULL) {
         return;
@@ -113,9 +113,10 @@ void listar_processos(char*path){
                 name_processo[i] = '\0';
             }
         }
-        for (int i = strlen(name_processo);i<41;i++) {
+        for (int i = strlen(name_processo);i<35;i++) {
             name_processo[i] = ' ';
         }
+        name_processo[35] = '\0';
         fclose(arquivo_status);
         char*temp = path+5;
         char pid[9] ={' '};
@@ -179,7 +180,7 @@ int main(){
         }
         double memoria_total_pc = mem1/(1024*1024);
         double memoria_usada_atual = ((mem1-mem2)/(1024*1024));
-        
+        double percentage = (memoria_usada_atual/memoria_total_pc)*100;
         if (selected < inicio+2) {
             selected = inicio+2;
         }
@@ -187,6 +188,7 @@ int main(){
             selected = total_processos - 1;
         }
         int index_max = total_processos-1;
+        char espacos[6]="     ";
         werase(win);
         werase(win_mem_total);
         werase(win_info);
@@ -195,16 +197,36 @@ int main(){
         mvwprintw(win_mem_total,2,0," ||''|   '' .||  ||. '   ||    ||'  ||  ||' '' .|  '|. .|   '' --- ||         ");
         mvwprintw(win_mem_total,3,0," ||      .|' ||  . '|..  ||    ||    |  ||     ||   || ||      --- '|.      . ");
         mvwprintw(win_mem_total,4,0,".||.     '|..'|' |'..|'  '|.'  ||...'  .||.     '|..|'  '|...'      ''|....'  ");
-        mvwprintw(win_mem_total,5,0,"                              _||_                                            ");
+        mvwprintw(win_mem_total,5,0,"                              _!!_                                            ");
         mvwprintw(win_mem_total,6,0,"___________________________________________________________________________________");
         for (int i = 0; i < max_linhas && (inicio + i) < total_processos; i++){
             int index = inicio + i;
             if (index == selected) {
                 wattron(win, A_REVERSE);
             }
-            mvwprintw(win, i, 0, "PID: %s  Name: %s   Memory: %4.2lf MB", 
+            int quant_espacos=0,temporario = processos[index_max-index].memoria;
+            while (temporario >=1){
+                if ((int) processos[index_max-index].memoria == 0){
+                    break;
+                }
+                quant_espacos++;
+                temporario /= 10;
+            }
+            if (processos[index_max-index].memoria <= 0.9){
+                char espacos[6]="     ";
+            }
+
+            else if (quant_espacos<=5 && (int) processos[index_max-index].memoria != 0){
+                for(int i = 0; i < 6-quant_espacos; i++){
+                    espacos[i]=' ';
+                }
+                espacos[6-quant_espacos] = '\0';
+            }
+            
+            mvwprintw(win, i, 0, "PID: %s  Name:%s   Memory:%s%4.2lf MB", 
                 processos[index_max-index].pid, 
-                processos[index_max-index].name, 
+                processos[index_max-index].name,
+                espacos, 
                 processos[index_max-index].memoria
             );
             if (index == selected) {
@@ -212,8 +234,8 @@ int main(){
             }
         }
         mvwprintw(win_info,0,0,"Total usable RAM avaliable in this pc: %.2lf GB.", memoria_total_pc);
-        mvwprintw(win_info,1,0,"Aproximated RAM usage from this pc: %.2lf GB.", memoria_usada_atual);
-        mvwprintw(win_info,3,0, "->Press 'w' or 'W' or 'Arrow Up' to move up a process.\n->Press 's' or 'S' 'Arrow Down' to move down a process.\n->Press 'k' or 'K' to close the selected task.\n->Press 'q' or 'Q' to exit the program.");
+        mvwprintw(win_info,1,0,"Total RAM usage from this pc: %.2lf%% || %.2lf GB .",percentage, memoria_usada_atual);
+        mvwprintw(win_info,3,0, "->Press 'w' or 'W' or 'Arrow Up' or 'Mouse Scroll Up' to move up a process.\n->Press 's' or 'S' or 'Arrow Down' or 'Mouse Scroll Down'to move down a process.\n->Press 'k' or 'K' to close the selected task.\n->Press 'q' or 'Q' to exit the program.");
         wnoutrefresh(win);
         wnoutrefresh(win_mem_total);
         wnoutrefresh(win_info);
