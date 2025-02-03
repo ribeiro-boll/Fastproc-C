@@ -267,6 +267,7 @@ int main(){
         processos = NULL;
         total_processos = 0;
         total = 0;
+        usleep(10000);
         refresh();
     }
     delwin(win);
