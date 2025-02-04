@@ -212,29 +212,21 @@ int main(){
                 quant_espacos++;
                 temporario /= 10;
             }
-            if (processos[index_max-index].memoria <= 0.9){
-                char espacos[6]="     ";
-            }
 
-            else if (quant_espacos<=5 && (int) processos[index_max-index].memoria != 0){
+            if (quant_espacos<=5 && (int) processos[index_max-index].memoria != 0){
                 for(int i = 0; i < 6-quant_espacos; i++){
                     espacos[i]=' ';
                 }
                 espacos[6-quant_espacos] = '\0';
             }
-            
-            mvwprintw(win, i, 0, "PID: %s  Name:%s   Memory:%s%4.2lf MB", 
-                processos[index_max-index].pid, 
-                processos[index_max-index].name,
-                espacos, 
-                processos[index_max-index].memoria
-            );
+            mvwprintw(win, i, 0, "PID: %s  Name:%s   Memory:%s%4.2lf MB", processos[index_max-index].pid, processos[index_max-index].name,espacos, processos[index_max-index].memoria);
+
             if (index == selected) {
                 wattroff(win, A_REVERSE);
             }
         }
         mvwprintw(win_info,0,0,"Total usable RAM avaliable in this pc: %.2lf GB.", memoria_total_pc);
-        mvwprintw(win_info,1,0,"Total RAM usage from this pc: %.2lf%% || %.2lf GB .",percentage, memoria_usada_atual);
+        mvwprintw(win_info,1,0,"Total RAM usage from this pc: %.2lf GB || %.2lf%%.", memoria_usada_atual,percentage);
         mvwprintw(win_info,3,0, "->Press 'w' or 'W' or 'Arrow Up' or 'Mouse Scroll Up' to move up a process.\n->Press 's' or 'S' or 'Arrow Down' or 'Mouse Scroll Down'to move down a process.\n->Press 'k' or 'K' to close the selected task.\n->Press 'q' or 'Q' to exit the program.");
         wnoutrefresh(win);
         wnoutrefresh(win_mem_total);
@@ -244,16 +236,17 @@ int main(){
         if (ch == 'w'|| ch =='W' || ch == KEY_UP) {
             if (selected > 0) {
                 selected--;
-                if (selected < inicio+2)
+                if (selected < inicio+2){
                     inicio--;
-                    
+                }
             }
         }
         else if (ch == 's'|| ch == 'S' || ch == KEY_DOWN) {
             if (selected < total_processos - 1) {
                 selected++;
-                if (selected >= inicio + max_linhas)
+                if (selected >= inicio + max_linhas){
                     inicio++;
+                }
             }
         }
         else if (ch == 'k'|| ch == 'K'){
