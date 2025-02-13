@@ -10,7 +10,7 @@
 
 ## English
 
-A minimalist almost realtime CLI process manager for memory monitoring for Linux, written in **C**.  
+A almost realtime minimalist CLI process manager for memory monitoring in Unix systems, written in **C**.  
 
 ### Features
 -  Real-time process monitoring via `/proc`
@@ -31,7 +31,7 @@ sudo make install
 
 ## pt-BR
 
-Um gerenciador de processos em quase tempo real CLI minimalista para Linux, escrito em **C**.  
+Um gerenciador de processos em quase tempo real, CLI e minimalista para monitoramento de memoria em sistemas Unix, escrito em **C**.  
 
 ### Funcionalidades
 - Monitoramento de processos em tempo real via `/proc`
